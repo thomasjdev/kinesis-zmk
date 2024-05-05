@@ -15,7 +15,7 @@
 #define THUMBS   35 36 37 38 52 53 65 66 67 68 69 70
 #define KEYS_R   7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75
 
-#define HM_TAPPING_TERM 330
+#define HM_TAPPING_TERM 340
 #define REG_TAPPING_TERM 200
 #define QUICK_TAPPING_TERM 175
 #define HM_PRIOR_IDLE 150
@@ -86,11 +86,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL        &kp N1         &kp N2       &kp N3       &kp N4          &kp N5 &tog KEYPAD                                                                                  &mo MOD    &kp N6 &kp N7         &kp N8       &kp N9       &kp N0           &kp MINUS
-        &kp TAB          &kp Q          &kp W        &kp E        &kp R           &kp T  &kp HOME                                                                                     &kp PG_UP  &kp Y  &kp U          &kp I        &kp O        &kp P            &kp BSLH
-        &kp ESC          &hml LCTRL A   &hml LALT S  &hml LGUI D  &hml LSHIFT F   &kp G  &kp END             &kp LS(LG(N3))  &kp LS(LG(N4))      &kp LC(SPACE)  &kp LG(SPACE)         &kp PG_DN  &kp H  &hmr RSHIFT J  &hmr RGUI K  &hmr LALT L  &hmr RCTRL SEMI  &kp SQT
-        &kp LSHFT        &kp Z          &kp X        &kp C        &kp V           &kp B                                      &kp LC(LG(EQUAL))   &kp LC(LG(MINUS))                               &kp N  &kp M          &kp COMMA    &kp DOT      &kp FSLH         &kp RSHFT
-        &mt LCTRL LPAR   &kp GRAVE      &caps_word   &mo KEYPAD   &mo SYM                              &lt NAV BSPC &kp DEL  &mo FN              &mo FN &kp ENTER &lt NAV SPACE                         &mo SYM        &kp LALT     &kp LBKT     &kp RBKT         &mt RCTRL RPAR
+        &kp EQUAL        &kp N1         &kp N2       &kp N3       &kp N4          &kp N5 &tog KEYPAD                                                                               &mo MOD    &kp N6   &kp N7         &kp N8         &kp N9         &kp N0           &kp MINUS
+        &kp TAB          &kp Q          &kp W        &kp E        &kp R           &kp T  &kp HOME                                                                                  &kp PG_UP  &kp Y    &kp U          &kp I          &kp O          &kp P            &kp BSLH
+        &kp ESC          &hml LCTRL A   &hml LALT S  &hml LGUI D  &hml LSHIFT F   &kp G  &kp END          &kp LS(LG(N3))  &kp LS(LG(N4))      &kp LC(SPACE)  &kp LG(SPACE)         &kp PG_DN  &kp H    &hmr RSHIFT J  &hmr RGUI K    &hmr LALT L    &hmr RCTRL SEMI  &kp SQT
+        &mt LSHFT LPAR        &kp Z          &kp X        &kp C        &kp V           &kp B                                   &kp LC(LG(EQUAL))   &kp LC(LG(MINUS))                          &kp N    &kp M          &kp COMMA      &kp DOT        &kp FSLH         &mt RSHFT RPAR
+        &mt LCTRL LBRC       &kp GRAVE      &mo KEYPAD    &caps_word  &mo SYM                         &lt NAV BSPC &kp DEL  &mo FN              &mo FN &kp ENTER &lt NAV SPACE                         &mo SYM        &caps_word     &kp LBKT       &kp RBKT         &mt RCTRL RBRC
       >;
     };
     keypad {
@@ -99,7 +99,7 @@
         &trans &trans &trans &trans &trans &trans  &trans                                                            &trans &kp Y  &kp N7  &kp N8    &kp N9     &kp KP_MINUS    &kp BSLH
         &trans &trans &trans &trans &trans &trans  &trans           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &trans &kp H  &kp N4  &kp N5    &kp N6     &kp KP_PLUS     &kp SQT
         &trans &trans &trans &trans &trans &trans                            &trans &trans                                  &kp N  &kp N1  &kp N2    &kp N3     &kp KP_ENTER    &kp RSHFT
-        &trans &trans &trans &trans &trans                &kp BSPC &kp DEL   &trans &trans &kp ENTER &kp KP_N0              &kp RGUI     &kp LALT     &kp KP_DOT    &kp RBKT        &trans
+        &trans &trans &trans &trans &trans                &kp BSPC &kp DEL   &trans &trans &kp ENTER &kp KP_N0              &kp RGUI     &kp LALT     &kp KP_DOT    &none        &trans
       >;
     };
     fn {
@@ -113,20 +113,20 @@
     };
     mod {
       bindings = <
-        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                     &trans                 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &bootloader                                                               &bootloader            &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &none                   &none &none &bt BT_CLR &none                      &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &macro_ver   &none                                      &none &none                                                        &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
+        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                 &trans                 &none        &none        &none        &none &none &none
+        &none &none        &none        &none        &none        &none        &bootloader                                                           &bootloader            &none        &none        &none        &none &none &none
+        &none &none        &none        &none        &none        &none        &none               &none &none &bt BT_CLR &none                      &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none &none
+        &none &none        &none        &none        &macro_ver   &none                                  &none &none                                                        &none        &none        &none        &none &none &none
+        &none &none        &none        &none        &none                                   &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
       >;
     };
     nav {
           bindings = <
-            &trans &trans &trans &trans &trans &trans  &none                                                                                    &none &trans &trans &trans &trans                                &trans  &trans
-            &trans &trans &trans &trans &trans &trans  &none                                                      &none &trans &trans     &kp LG(LS(LBKT))    &kp LG(LS(RBKT))      &trans  &trans
-            &trans &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &trans  &none                             &trans &trans   &trans &trans        &none &kp LEFT &kp DOWN &kp UP             &kp RIGHT             &trans  &macro_quotes
-            &trans &trans &trans &trans &trans &trans                                                      &kp HOME &kp PG_UP                           &trans   &trans   &kp LG(LBKT)       &kp LG(RBKT)          &trans  &trans
-            &trans &trans &trans &trans &trans                                               &trans &trans &kp END  &kp PG_DN  &trans &trans             &trans &trans &trans  &trans  &trans
+            &trans &trans &trans &trans &trans &trans  &none                                                                  &none &trans    &trans    &trans            &trans             &trans  &trans
+            &trans &trans &trans &trans &trans &trans  &none                                                                  &none &trans    &trans    &kp LG(LS(LBKT))  &kp LG(LS(RBKT))   &trans  &trans
+            &trans &trans &trans &trans &trans &trans  &none                   &trans &trans    &trans &trans                 &none &kp LEFT  &kp DOWN  &kp UP            &kp RIGHT          &trans  &macro_quotes
+            &trans &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &trans                      &kp HOME  &kp PG_UP                           &trans    &trans    &kp LG(LBKT)      &kp LG(RBKT)       &trans  &trans
+            &trans &trans &trans &trans &trans                          &trans &trans &kp END   &kp PG_DN  &trans &trans                      &trans    &trans            &trans             &trans  &trans
           >;
     };
     sym {
