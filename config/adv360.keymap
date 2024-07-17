@@ -86,11 +86,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL        &kp N1         &kp N2       &kp N3       &kp N4          &kp N5 &tog KEYPAD                                                                               &mo MOD    &kp N6   &kp N7         &kp N8         &kp N9         &kp N0           &kp MINUS
-        &kp TAB          &kp Q          &kp W        &kp E        &kp R           &kp T  &kp HOME                                                                                  &kp PG_UP  &kp Y    &kp U          &kp I          &kp O          &kp P            &kp BSLH
-        &mt LCTRL ESC          &hml LCTRL A   &hml LALT S  &hml LGUI D  &hml LSHIFT F   &kp G  &kp END          &kp LS(LG(N3))  &kp LS(LG(N4))      &kp LC(SPACE)  &kp LG(SPACE)         &kp PG_DN  &kp H    &hmr RSHIFT J  &hmr RGUI K    &hmr LALT L    &hmr RCTRL SEMI  &kp SQT
-        &kp LSHFT         &kp Z          &kp X        &kp C        &kp V           &kp B                                   &kp LC(LG(EQUAL))   &kp LC(LG(MINUS))                          &kp N    &kp M          &kp COMMA      &kp DOT        &kp FSLH         &kp RSHFT
-        &mt LCTRL LPAR    &lt KEYPAD GRAVE  &caps_word    &kp LALT  &kp LGUI                         &lt NAV BSPC &kp DEL  &mo FN              &mo FN &lt SYM ENTER &lt NAV SPACE                         &kp RGUI        &kp LALT     &kp LBKT       &kp RBKT         &mt RCTRL RPAR
+        &kp EQUAL        &kp N1     &kp N2       &kp N3    &kp N4    &kp N5 &tog KEYPAD                                                                               &mo MOD   &kp N6   &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
+        &kp TAB          &kp Q      &kp W        &kp E     &kp R     &kp T  &kp LBRC                                                                                  &kp RBRC  &kp Y    &kp U     &kp I      &kp O     &kp P     &kp BSLH
+        &mt LCTRL ESC    &kp A      &kp S        &kp D     &kp F     &kp G  &kp LPAR     &kp LC(LG(MINUS))  &kp LALT        &kp LGUI  &kp LC(LG(EQUAL))               &kp RPAR  &kp H    &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+        &kp LSHFT        &kp Z      &kp X        &kp C     &kp V     &kp B                                  &kp LS(LG(N4))  &kp LS(LG(N3))                                      &kp N    &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+        &mt LCTRL LPAR   &kp GRAVE  &caps_word   &kp LALT  &kp LGUI                   &lt NAV BSPC &kp DEL  &kp LC(SPACE)   &kp LG(SPACE) &lt SYM ENTER &lt NAV SPACE                    &kp RGUI  &kp LALT   &kp LBKT  &kp RBKT  &mt RCTRL RPAR
       >;
     };
     keypad {
@@ -122,11 +122,11 @@
     };
     nav {
           bindings = <
-            &trans &trans &trans &trans &trans &trans  &none                                                                  &none &trans    &trans    &trans            &trans             &trans  &trans
-            &trans &trans &trans &trans &trans &trans  &none                                                                  &none &trans    &trans    &kp LG(LS(LBKT))  &kp LG(LS(RBKT))   &trans  &trans
-            &trans &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &trans  &none                   &trans &trans    &trans &trans                 &none &kp LEFT  &kp DOWN  &kp UP            &kp RIGHT          &trans  &macro_quotes
-            &trans &trans &trans &trans &trans &trans                      &kp HOME  &kp PG_UP                           &trans    &trans    &kp LG(LBKT)      &kp LG(RBKT)       &trans  &trans
-            &trans &trans &trans &trans &trans                          &trans &trans &kp END   &kp PG_DN  &trans &trans                      &trans    &trans            &trans             &trans  &trans
+            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KEYPAD                                                     &mo MOD &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+            &trans &trans &trans &trans &trans &trans  &none                                                          &none &trans    &trans    &kp LG(LS(LBKT))  &kp LG(LS(RBKT))   &trans  &trans
+            &trans &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &trans  &none    &trans &trans    &trans &trans             &none &kp LEFT  &kp DOWN  &kp UP            &kp RIGHT          &trans  &macro_quotes
+            &trans &trans &trans &trans &trans &trans                             &kp HOME  &kp PG_UP                       &trans    &trans    &kp LG(LBKT)      &kp LG(RBKT)       &trans  &trans
+            &trans &trans &trans &trans &trans                      &trans &trans &kp END   &kp PG_DN  &trans &trans                  &trans    &trans            &trans             &trans  &trans
           >;
     };
     sym {
