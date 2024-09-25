@@ -15,20 +15,34 @@
 #define THUMBS   35 36 37 38 52 53 65 66 67 68 69 70
 #define KEYS_R   7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75
 
-#define HM_TAPPING_TERM 340
-#define REG_TAPPING_TERM 200
+// define keycombo shortcuts
+#define CLIP LC(LG(EQUAL))
+#define PASS LC(LG(MINUS))
+#define TASK LC(SPACE)
+#define ALFD LG(SPACE)
+#define SSCS LS(LG(N4)) // Select Screen Shot
+#define ASCS LS(LG(N3)) // All Screen Shot
+#define HYPR        LS(LC(LA(LGUI)))
+#define MEH        LS(LC(LALT))
+
+#define HM_TAPPING_TERM 280
+#define TAPPING_TERM 200
 #define QUICK_TAPPING_TERM 175
 #define HM_PRIOR_IDLE 150
 
 &sk {  // sticky-key config
-    release-after-ms = <900>;  // release after 0.6s
+    release-after-ms = <900>;  // release after 0.9s
     quick-release;             // no double capitalization when rolling keys
 };
 
+&sl { // sticky-layer config
+    ignore-modifiers;
+};
+
 &lt {
-    tapping-term-ms = <220>;
-    quick_tap_ms = <200>;
     flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick_tap_ms = <QUICK_TAPPING_TERM>;
 };
 
 / {
@@ -86,11 +100,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL        &kp N1     &kp N2       &kp N3    &kp N4    &kp N5 &tog KEYPAD                                                                               &mo MOD   &kp N6   &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-        &kp TAB          &kp Q      &kp W        &kp E     &kp R     &kp T  &kp LBRC                                                                                  &kp RBRC  &kp Y    &kp U     &kp I      &kp O     &kp P     &kp BSLH
-        &mt LCTRL ESC    &kp A      &kp S        &kp D     &kp F     &kp G  &kp LPAR     &kp LC(LG(MINUS))  &kp LALT        &kp LGUI  &kp LC(LG(EQUAL))               &kp RPAR  &kp H    &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-        &kp LSHFT        &kp Z      &kp X        &kp C     &kp V     &kp B                                  &kp LS(LG(N4))  &kp LS(LG(N3))                                      &kp N    &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-        &mt LCTRL LPAR   &kp GRAVE  &caps_word   &kp LALT  &kp LGUI                   &lt NAV BSPC &kp DEL  &kp LC(SPACE)   &kp LG(SPACE) &lt SYM ENTER &lt NAV SPACE                    &kp RGUI  &kp LALT   &kp LBKT  &kp RBKT  &mt RCTRL RPAR
+        &kp EQUAL        &kp N1        &kp N2       &kp N3       &kp N4         &kp N5 &tog KEYPAD                                                              &mo MOD    &kp N6   &kp N7         &kp N8         &kp N9       &kp N0           &kp MINUS
+        &kp TAB          &kp Q         &kp W        &kp E        &kp R          &kp T  &kp HOME                                                                 &kp PG_UP  &kp Y    &kp U          &kp I          &kp O        &kp P            &kp BSLH
+        &kp ESC          &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G  &kp END      &kp PASS  &kp LALT   &kp LGUI  &kp CLIP                     &kp PG_DN  &kp H    &hmr RSHIFT J  &hmr RGUI K    &hmr LALT L  &hmr RCTRL SEMI  &kp SQT
+        &mt LSHFT LPAR   &kp Z         &kp X        &kp C        &kp V          &kp B                         &kp SSCS   &kp ASCS                                          &kp N    &kp M          &kp COMMA      &kp DOT      &kp FSLH         &mt RSHFT RPAR
+        &mt LCTRL LBRC   &kp GRAVE     &caps_word   &kp MEH     &kp HYPR                    &kp BSPC &kp DEL  &kp TASK   &kp ALFD &lt SYM ENTER &lt NAV SPACE                       &kp HYPR       &kp MEH        &kp LBKT     &kp RBKT         &mt RCTRL RBRC
       >;
     };
     keypad {
@@ -124,7 +138,7 @@
           bindings = <
             &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KEYPAD                                                     &mo MOD &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
             &trans &trans &trans &trans &trans &trans  &none                                                          &none &trans    &trans    &kp LG(LS(LBKT))  &kp LG(LS(RBKT))   &trans  &trans
-            &trans &sk LCTRL &sk LALT &sk LGUI &sk LSHIFT &trans  &none    &trans &trans    &trans &trans             &none &kp LEFT  &kp DOWN  &kp UP            &kp RIGHT          &trans  &macro_quotes
+            &trans &trans &trans &trans &trans &trans  &none               &trans &trans    &trans &trans             &none &kp LEFT  &kp DOWN  &kp UP            &kp RIGHT          &trans  &macro_quotes
             &trans &trans &trans &trans &trans &trans                             &kp HOME  &kp PG_UP                       &trans    &trans    &kp LG(LBKT)      &kp LG(RBKT)       &trans  &trans
             &trans &trans &trans &trans &trans                      &trans &trans &kp END   &kp PG_DN  &trans &trans                  &trans    &trans            &trans             &trans  &trans
           >;
