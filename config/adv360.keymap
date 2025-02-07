@@ -2,7 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/stp.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT 0
 #define KEYPAD 1
@@ -99,6 +101,7 @@
     compatible = "zmk,keymap";
 
     default_layer {
+      display-name = "Base";
       bindings = <
         &kp EQUAL        &kp N1        &kp N2       &kp N3       &kp N4         &kp N5 &tog KEYPAD                                                              &mo MOD    &kp N6   &kp N7         &kp N8         &kp N9       &kp N0           &kp MINUS
         &kp TAB          &kp Q         &kp W        &kp E        &kp R          &kp T  &kp HOME                                                                 &kp PG_UP  &kp Y    &kp U          &kp I          &kp O        &kp P            &kp BSLH
@@ -108,6 +111,7 @@
       >;
     };
     keypad {
+      display-name = "Kp";
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                           &mo MOD &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
         &trans &trans &trans &trans &trans &trans  &trans                                                            &trans &kp Y  &kp N7  &kp N8    &kp N9     &kp KP_MINUS    &kp BSLH
@@ -117,6 +121,7 @@
       >;
     };
     fn {
+      display-name = "Fn";
       bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KEYPAD                                           &mo MOD &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
         &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
@@ -126,12 +131,13 @@
       >;
     };
     mod {
+      display-name = "Mod";
       bindings = <
-        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                 &trans                 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &bootloader                                                           &bootloader            &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &none               &none &none &bt BT_CLR &none                      &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &macro_ver   &none                                  &none &none                                                        &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none                                   &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
+        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                     &trans                 &none        &none        &none        &none &none &none
+        &none &none        &none        &none        &none        &none        &bootloader                                                               &bootloader            &none        &none        &none        &none &none &none
+        &studio_unlock &none        &none        &none        &none        &none        &none                   &none &none &bt BT_CLR &none                      &stp STP_BAT &none        &none        &none        &none &none &none
+        &none &none        &none        &none        &macro_ver   &none                                      &none &none                                                        &none        &none        &none        &none &none &none
+        &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
       >;
     };
     nav {
@@ -151,6 +157,25 @@
             &trans &trans &trans &trans &trans &trans                                                   &trans &trans                       &trans     &kp EQUAL       &kp LT    &kp GT     &trans  &trans
             &trans &trans &trans &trans &trans                                            &trans &trans &trans &trans &trans &trans                    &trans          &trans    &trans     &trans  &trans
           >;
+    };
+    extra1 {
+      display-name = "Red";
+      status = "reserved";
+    };
+
+    extra2 {
+      display-name = "Purple";
+      status = "reserved";
+    };
+
+    extra3 {
+      display-name = "Cyan";
+      status = "reserved";
+    };
+
+    extra4 {
+      display-name = "Yellow";
+      status = "reserved";
     };
   };
 };
