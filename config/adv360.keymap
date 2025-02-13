@@ -30,7 +30,7 @@
 #define HM_TAPPING_TERM 280
 #define TAPPING_TERM 200
 #define QUICK_TAPPING_TERM 175
-#define HM_PRIOR_IDLE 150
+#define HM_PRIOR_IDLE 160
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.9s
